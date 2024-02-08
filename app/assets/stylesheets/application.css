@@ -13,9 +13,14 @@
  *= require_tree .
  *= require_self
  */
+:root {
+  --lime: #bef264;
+  --darkSlate: #0f172a;
+}
 
 body {
-  background-color: darkblue;
+  font-family: "Inter", sans-serif;
+  background-color: var(--darkSlate);
 }
 
 .container {
@@ -29,12 +34,28 @@ body {
 }
 
 .container .box {
-  width: 300px;
-  height: 300px;
-  background-color: lightblue;
-  border-radius: 10px;
+  width: 80%;
+  height: 90%;
+  /* background-color: gray; */
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+.container .box .body {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--lime);
+  width: 100%;
+  height: 100%;
+  background-color: var(--darkSlate);
+}
+
+.container .box .title {
+  color: var(--lime);
+  font-size: 2rem;
+  font-weight: 600;
 }
