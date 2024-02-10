@@ -1,15 +1,23 @@
-Hello World!
-
 <body class="container">
-<div class="box">
-<div class="body"><span class="title">Notepad</span>
-</div>
+    <div class="box">
+        <div class="body">
+            <span class="mainTitle">Notepad</span>
+            <div class="notes" >
+                <div class="createNote">
+                    <a href="/notes/new" class="button">Criar</a>
+                    <h2 class="title">Adicionar Nota</h2>
+                    <p class="p">Criar uma nova nota</p>
+                </div>
+                <% @notes.each do |note| %>
 
-
-<%# <%= link_to 'Home', root_path %> 
-<%# <%= link_to 'About', about_path %>
-<%# <%= link_to 'Homework', homework_path %>
-</div>
-
-
+                    <div class="note">
+                        <span class="date"><%= distance_of_time_in_words(note.created_at, Time.now) %> ago</span>
+                        <h2 class="title"><%= note.title %></h2>
+                        <p class="p"><%= note.description %></p>
+                    </div>
+            
+                <% end %>
+            </div>
+        </div>
+    </div>
 </body>

@@ -1,47 +1,52 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Variáveis CSS */
 :root {
   --lime: #bef264;
   --darkSlate: #0f172a;
+  --slate: #1e293b;
+  --lightSlate: #334155;
 }
 
+/* Estilos Globais */
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--darkSlate);
 }
 
+/* Estilos Globais */
+a {
+  text-decoration: none;
+  color: var(--lime);
+}
+
+/* Container Principal */
 .container {
-  width: 100%; /* largura desejada */
+  width: 100%;
   height: 100vh;
-  margin: 0 auto; /* Isso centraliza horizontalmente */
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
+.container .buttonContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: between;
+}
+
+/* Box dentro do Container */
 .container .box {
   width: 80%;
   height: 90%;
-  /* background-color: gray; */
-
   display: flex;
   flex-direction: column;
 }
 
+/* Corpo da Nota */
 .container .box .body {
   color: white;
   display: flex;
@@ -54,8 +59,50 @@ body {
   background-color: var(--darkSlate);
 }
 
-.container .box .title {
+/* Estilos de Título */
+.mainTitle {
   color: var(--lime);
   font-size: 2rem;
   font-weight: 600;
+}
+
+.container .box .createNote {
+  margin-top: 1rem;
+  background-color: var(--lightSlate);
+  height: 250px;
+  width: 350px;
+  text-align: start;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+/* Nota dentro do Box */
+.container .box .note {
+  margin-top: 1rem;
+  height: 250px;
+  width: 350px;
+  text-align: start;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-image: linear-gradient(180deg, var(--slate) 50%, var(--darkSlate));
+}
+
+.container .box .notes {
+  display: flex;
+  flex-direction: wrap;
+  gap: 1rem;
+}
+
+/* Parágrafos dentro da Nota */
+.container .box .note p {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Título dentro da Nota */
+.note .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
