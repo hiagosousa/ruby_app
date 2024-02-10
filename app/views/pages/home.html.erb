@@ -1,23 +1,42 @@
 <body class="container">
     <div class="box">
-        <div class="body">
-            <span class="mainTitle">Notepad</span>
+            <div class="header">
+                <h1>Notepad</h1>
+                <div class="header">
+                    <h3>Inspired by:</h3>
+                    <%= image_tag("inspirationLogo.svg") %>
+                </div>
+                
+
+            </div>
+            
+            <hr/>
             <div class="notes" >
                 <div class="createNote">
-                    <a href="/notes/new" class="button">Criar</a>
-                    <h2 class="title">Adicionar Nota</h2>
-                    <p class="p">Criar uma nova nota</p>
+                    <div class="topBar">
+                        <a href="/notes/new" class="button"><span>+</span></a>
+                    </div>
+                    <div class="noteContent">
+                        <h2>Adicionar Nota</h2>
+                        <p>Criar uma nova nota</p>
+                    </div>                    
                 </div>
                 <% @notes.each do |note| %>
 
                     <div class="note">
-                        <span class="date"><%= distance_of_time_in_words(note.created_at, Time.now) %> ago</span>
-                        <h2 class="title"><%= note.title %></h2>
-                        <p class="p"><%= note.description %></p>
+                        <div class="topBar">
+                            <span class="date"><%= distance_of_time_in_words(note.created_at, Time.now) %> ago</span>
+                            
+                        </div>
+                        <div class="noteContent">
+                            <h2 class="title"><%= note.title %></h2>
+                        <p><%= note.description %></p>
+                        </div>
+                        
                     </div>
             
                 <% end %>
             </div>
-        </div>
+
     </div>
 </body>

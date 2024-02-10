@@ -18,6 +18,46 @@ a {
   color: var(--lime);
 }
 
+h1 {
+  color: var(--lime);
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+h2 {
+  color: var(--lime);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+h3 {
+  color: var(--lightSlate);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+p {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+}
+
+hr {
+  border-color: var(--lightSlate);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Container Principal */
 .container {
   width: 100%;
@@ -30,14 +70,6 @@ a {
   gap: 1rem;
 }
 
-.container .buttonContainer {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: between;
-}
-
 /* Box dentro do Container */
 .container .box {
   width: 80%;
@@ -46,24 +78,10 @@ a {
   flex-direction: column;
 }
 
-/* Corpo da Nota */
-.container .box .body {
-  color: white;
+.container .box .notes {
   display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  border-radius: 10px;
-  border: 2px solid var(--lime);
-  width: 100%;
-  height: 100%;
-  background-color: var(--darkSlate);
-}
-
-/* Estilos de Título */
-.mainTitle {
-  color: var(--lime);
-  font-size: 2rem;
-  font-weight: 600;
+  flex-direction: wrap;
+  gap: 1rem;
 }
 
 .container .box .createNote {
@@ -73,7 +91,24 @@ a {
   width: 350px;
   text-align: start;
   border-radius: 6px;
+}
+
+.container .box .createNote .topBar {
+  display: flex;
+  width: 100%;
+  height: 12%;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+
+.noteContent {
+  display: flex;
+  width: 100%;
+  height: 100%;
   padding: 1rem;
+  flex-direction: column;
+  justify-content: start;
 }
 
 /* Nota dentro do Box */
@@ -83,26 +118,43 @@ a {
   width: 350px;
   text-align: start;
   border-radius: 6px;
-  padding: 1rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background-image: linear-gradient(180deg, var(--slate) 50%, var(--darkSlate));
 }
 
-.container .box .notes {
+.container .box .note .topBar {
   display: flex;
-  flex-direction: wrap;
+  width: 100%;
+  height: 10%;
+  flex-direction: row;
   gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Parágrafos dentro da Nota */
-.container .box .note p {
-  color: white;
-  font-size: 1.2rem;
+.container .box .button {
+  background-color: var(--slate);
+  color: var(--lime);
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  height: 100%;
+  width: 35px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Título dentro da Nota */
-.note .title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.container .box .button span {
+  font-size: 1rem;
+  color: var(--lime);
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .box .button:hover {
+  background-color: var(--lightSlate);
 }
