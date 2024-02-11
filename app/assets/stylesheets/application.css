@@ -1,5 +1,6 @@
 /*
   *= require modal
+  *= require form
 */
 
 /* Variáveis CSS */
@@ -18,42 +19,16 @@ body {
   scrollbar-color: var(--lime) var(--slate);
 }
 
-body::-webkit-scrollbar {
-  width: 8px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--lime);
-  border-radius: 4px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: var(--slate);
-}
-
 span {
   color: var(--lightGray);
   font-weight: 300;
   font-size: 0.8rem;
 }
 
-/* Estilos Globais */
 a {
   text-decoration: none;
-  background-color: var(--slate);
   color: var(--lime);
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  height: 100%;
-  width: 35px;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
-
-a:hover {
-  background-color: var(--lightSlate);
+  font-size: 0.8rem;
 }
 
 h1 {
@@ -64,7 +39,7 @@ h1 {
 
 h2 {
   color: var(--lime);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin: 0;
 }
@@ -86,6 +61,34 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  padding: 0 0;
+  border: none;
+  background-image: linear-gradient(
+    180deg,
+    var(--lightSlate) 50%,
+    var(--slate)
+  );
+  color: var(--lightGray);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+input {
+  padding: 0 0;
 }
 
 .header {
@@ -118,13 +121,38 @@ hr {
 
 .container .box .notes {
   display: grid;
+  width: 100%;
+  height: 100%;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  justify-items: start;
+  overflow-x: auto;
+}
+
+.container .box .notes::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container .box .notes::-webkit-scrollbar-thumb {
+  background-color: var(--lime);
+  border-radius: 4px;
+}
+
+.container .box .notes::-webkit-scrollbar-track {
+  background-color: var(--slate);
 }
 
 .container .box .createNote {
   margin-top: 1rem;
-  background-color: var(--lightSlate);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-image: linear-gradient(
+    180deg,
+    var(--lightSlate) 50%,
+    var(--slate)
+  );
   height: 250px;
   width: 350px;
   text-align: start;
@@ -133,8 +161,10 @@ hr {
 
 .container .box .createNote .topBar {
   display: flex;
-  width: 100%;
-  height: 12%;
+  width: 94%;
+  height: 10%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   flex-direction: row;
   justify-content: end;
   align-items: center;
@@ -143,7 +173,7 @@ hr {
 
 .noteContent {
   display: flex;
-  width: 90%;
+  width: 94%;
   height: 90%;
   flex-direction: column;
   justify-content: start;
@@ -152,6 +182,20 @@ hr {
   gap: 1rem;
   overflow-y: auto;
   scrollbar-color: var(--lime) var(--slate);
+}
+
+.noteContent::-webkit-scrollbar {
+  width: 8px;
+  margin-left: 0.5rem;
+}
+
+.noteContent::-webkit-scrollbar-thumb {
+  background-color: var(--lime);
+  border-radius: 4px;
+}
+
+.noteContent::-webkit-scrollbar-track {
+  background-color: var(--slate);
 }
 
 /* Nota dentro do Box */
@@ -171,39 +215,62 @@ hr {
 
 .container .box .note .topBar {
   display: flex;
-  width: 90%;
+  width: 94%;
   height: 10%;
   flex-direction: row;
   gap: 1rem;
   padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   justify-content: space-between;
   align-items: center;
   color: var(--lime);
 }
 
-.container .box .button {
-  background-color: var(--slate);
-  color: var(--lime);
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  height: 100%;
-  width: 35px;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
-
-.container .box .button span {
-  font-size: 1rem;
-  color: var(--lime);
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
 .container .box .button:hover {
   background-color: var(--lightSlate);
+}
+
+.buttons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.add-button {
+  background-color: var(--lime);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: rgba(190, 242, 100, 0.6);
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+.edit-button {
+  background-color: var(--lightSlate);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: var(--lightSlate);
+  opacity: 0.8;
 }

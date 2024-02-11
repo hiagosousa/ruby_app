@@ -1,10 +1,15 @@
 <%= turbo_frame_tag :modal do %>
-  <div data-controller="turbomodal" class="modal" data-action="turbo:submit-end->turbomodal#submitEnd">
-    <h1>New note</h1>
-    <%= render "form", note: @note %>
-    <br>
-    <div>
-      <%= link_to 'Cancel', '#', data: { action: 'click->turbomodal#cancelModal' } %>
+  <div data-controller="turbomodal" class="modal-backdrop" data-action="turbo:submit-end->turbomodal#submitEnd">
+    <div class="modal">    
+      <h1 class="modal-header">New note</h1>
+      <div class="modal-content">
+        <%= render "form", note: @note %>
+      </div>
+      
+      <br>
+      <div>
+        <%= link_to 'Cancel', '#', data: { action: 'click->turbomodal#cancelModal' } %>
+      </div>
     </div>
   </div>
 <% end %>

@@ -11,17 +11,15 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="field">
+    <%= form.label :title, style: "display: block", class: "label" %>
+    <%= form.text_field :title, class: "input", autofocus: true %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="field">
+    <%= form.label :description, style: "display: block", class: "label" %>
+    <%= form.text_area :description, class: "textarea" %>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+    <%= form.submit "Save", style: "display: block", class: "button" %>
 <% end %>
