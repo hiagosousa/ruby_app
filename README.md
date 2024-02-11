@@ -1,6 +1,6 @@
 <h1 align="center"> Ruby Notepad </h1>
 
-Project utilizing Ruby which design and execution was inspired by Rocketseat's NLW Expert event. 
+Project utilizing Ruby on Rails, on which I challenged myself to create a project with no previous knowledge in the language. The design and execution was inspired by Rocketseat's NLW Expert event. 
 
 # 🛠️ Technologies and knowledge applied
 * Made with Rails 7.1.2, utilizing Ruby V3.3.0;
