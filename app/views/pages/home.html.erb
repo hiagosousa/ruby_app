@@ -1,42 +1,33 @@
 <body class="container">
     <div class="box">
+
             <div class="header">
                 <h1>Notepad</h1>
                 <div class="header">
                     <h3>Inspired by:</h3>
                     <%= image_tag("inspirationLogo.svg") %>
                 </div>
-                
-
             </div>
             
             <hr/>
-            <div class="notes" >
+                
+            <div id="notes" class="notes">
                 <div class="createNote">
                     <div class="topBar">
-                        <a href="/notes/new" class="button"><span>+</span></a>
+                            <%= link_to "+", new_note_path,  data: { turbo_frame: "modal" } %>                       
                     </div>
+
                     <div class="noteContent">
                         <h2>Adicionar Nota</h2>
                         <p>Criar uma nova nota</p>
                     </div>                    
                 </div>
-                <% @notes.each do |note| %>
 
-                    <div class="note">
-                        <div class="topBar">
-                            <span class="date"><%= distance_of_time_in_words(note.created_at, Time.now) %> ago</span>
-                            
-                        </div>
-                        <div class="noteContent">
-                            <h2 class="title"><%= note.title %></h2>
-                        <p><%= note.description %></p>
-                        </div>
-                        
-                    </div>
-            
+                <% @notes.each do |note| %>
+                    <%= render 'notes/note', note: note %>
                 <% end %>
             </div>
+
 
     </div>
 </body>

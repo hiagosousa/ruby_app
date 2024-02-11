@@ -1,3 +1,7 @@
+/*
+  *= require modal
+*/
+
 /* Variáveis CSS */
 :root {
   --lime: #bef264;
@@ -15,7 +19,20 @@ body {
 /* Estilos Globais */
 a {
   text-decoration: none;
+  background-color: var(--slate);
   color: var(--lime);
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  height: 100%;
+  width: 35px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+a:hover {
+  background-color: var(--lightSlate);
 }
 
 h1 {
@@ -79,8 +96,8 @@ hr {
 }
 
 .container .box .notes {
-  display: flex;
-  flex-direction: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1rem;
 }
 

@@ -5,7 +5,7 @@ class NotesController < ApplicationController
 
   # GET /notes or /notes.json
   def index
-    @notes = Note.all
+    @notes = Note.order(created_at: :desc)
   end
 
   # GET /notes/1 or /notes/1.json
@@ -25,6 +25,9 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.prepend('notes', partial: 'notes/note', locals: { note: @note })
+        end
         format.html { redirect_to note_url(@note), notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else
