@@ -1,24 +1,14 @@
-# README
+<h1 align="center"> Ruby Notepad </h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project utilizing Ruby which design and execution was inspired by Rocketseat's NLW Expert event. 
 
-Things you may want to cover:
+# 🛠️ Technologies and knowledge applied
+* Made with Rails 7.1.2, utilizing Ruby V3.3.0;
+* Fully functional CRUD (Create, Read, Update, Delete);
+* Interactive interface with modals created with Turbo;
 
-* Ruby version
+# 📖 Design
+* The inspiration for this project can be found on the following link:
+   
+ https://www.figma.com/file/ROU2VmRq77FPEhKHx5TSda/NLW-expert-•-Notes-(Community)?type=design&node-id=102-1490&mode=design&t=BZBQLLXaEC05uhk9-0 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
