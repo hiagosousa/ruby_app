@@ -4,6 +4,7 @@
 
 /* Variáveis CSS */
 :root {
+  --lightGray: #e2e8f0;
   --lime: #bef264;
   --darkSlate: #0f172a;
   --slate: #1e293b;
@@ -14,6 +15,26 @@
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--darkSlate);
+  scrollbar-color: var(--lime) var(--slate);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--lime);
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--slate);
+}
+
+span {
+  color: var(--lightGray);
+  font-weight: 300;
+  font-size: 0.8rem;
 }
 
 /* Estilos Globais */
@@ -97,7 +118,7 @@ hr {
 
 .container .box .notes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
@@ -122,10 +143,15 @@ hr {
 
 .noteContent {
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   flex-direction: column;
   justify-content: start;
+  align-items: start;
+  margin: 0 10px; /* Adiciona espaçamento horizontal */
+  gap: 1rem;
+  overflow-y: auto;
+  scrollbar-color: var(--lime) var(--slate);
 }
 
 /* Nota dentro do Box */
@@ -137,14 +163,19 @@ hr {
   border-radius: 6px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background-image: linear-gradient(180deg, var(--slate) 50%, var(--darkSlate));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .container .box .note .topBar {
   display: flex;
-  width: 100%;
+  width: 90%;
   height: 10%;
   flex-direction: row;
   gap: 1rem;
+  padding-top: 0.5rem;
   justify-content: space-between;
   align-items: center;
   color: var(--lime);
